@@ -22,19 +22,20 @@ import { TelegramService } from 'src/telegram/telegram.service';
 export class ReviewController {
   constructor(
     private readonly reviewService: ReviewService,
-    private readonly telegramService : TelegramService
+    private readonly telegramService: TelegramService,
   ) {}
 
   @UseGuards(JwtAuthGuard)
   @UsePipes(new ValidationPipe())
   @Post('create')
   async create(@Body() dto: CreateReviewDto) {
-    const message = `Имя ${dto.name}\n`
-    + `Заголовок ${dto.title}\n`
-    + `Описание ${dto.description}\n`
-    + `Рейтинг ${dto.raiting}\n`
-    + `id продукта ${dto.productId}`;
-    this.telegramService.sendMessage(message)
+    const message =
+      `Имя ${dto.name}\n` +
+      `Заголовок ${dto.title}\n` +
+      `Описание ${dto.description}\n` +
+      `Рейтинг ${dto.raiting}\n` +
+      `id продукта ${dto.productId}`;
+    this.telegramService.sendMessage(message);
     return this.reviewService.create(dto);
   }
 

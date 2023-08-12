@@ -18,11 +18,6 @@ import { ReviewService } from './review.service';
         },
       },
     ]),
-    TelegramModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: getTelegramConfig,
-    }),
   ],
   providers: [ReviewService],
 })
