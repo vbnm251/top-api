@@ -12,7 +12,7 @@ jobs:
       - name: Publish to registery
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          register: docker.pkg.github.com
+          registry: docker.pkg.github.com
           name: docker.pkg.github.com/vbnm251/top-api/top-api
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
