@@ -1,8 +1,7 @@
 FROM node:18-alpine
 WORKDIR /opt/app
 ADD package.json package.json
-RUN npm install --production --force
-RUN npm install @nestjs/cli ---force
+RUN npm install --force
 ADD . .
 
 RUN npm run build
