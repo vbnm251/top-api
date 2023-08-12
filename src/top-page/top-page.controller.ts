@@ -30,6 +30,7 @@ export class TopPageController {
     return this.topPageService.create(dto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get(':id')
   async getById(@Param('id', IdValidatinoPipe) id: string) {
     const page = await this.topPageService.findById(id);
