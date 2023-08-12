@@ -3,6 +3,7 @@
 /node_modules
 .env
 /uploads
+/.clinic
 
 # Logs
 logs
@@ -35,4 +36,3 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-.clinic
